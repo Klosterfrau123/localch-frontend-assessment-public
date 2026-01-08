@@ -85,7 +85,7 @@ const mockPlaces: Place[] = [
 ];
 
 const meta: Meta<typeof HomePage> = {
-  title: 'Pages/A HomePage',
+  title: 'Pages/HomePage',
   component: HomePage,
   parameters: {
     layout: 'fullscreen',

@@ -78,7 +78,7 @@ const mockPlace: Place = {
 };
 
 const meta: Meta<typeof PlaceDetail> = {
-  title: 'Pages/B PlaceDetail',
+  title: 'Pages/PlaceDetail',
   component: PlaceDetail,
   parameters: {
     layout: 'fullscreen',
