@@ -3,7 +3,14 @@ import { config } from '@/lib/config';
 import { HomePage } from '@/components/HomePage/HomePage';
 
 export default async function Page() {
-  const places = await Promise.all(config.examplePlaceIds.map((id) => fetchPlace(id)));
+  // Use allSettled to handle partial failures gracefully
+  const results = await Promise.allSettled(config.examplePlaceIds.map((id) => fetchPlace(id)));
+  const places = results
+    .filter(
+      (result): result is PromiseFulfilledResult<Awaited<ReturnType<typeof fetchPlace>>> =>
+        result.status === 'fulfilled'
+    )
+    .map((result) => result.value);
 
   return <HomePage places={places} />;
 }

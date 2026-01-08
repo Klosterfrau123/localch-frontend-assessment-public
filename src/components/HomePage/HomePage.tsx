@@ -1,5 +1,6 @@
 import type { Place } from '@/lib/types';
 import { PlaceCard } from '@/components/PlaceCard/PlaceCard';
+import { getPlaceName } from '@/lib/placeUtils';
 import styles from './HomePage.module.css';
 
 interface HomePageProps {
@@ -25,6 +26,7 @@ export function HomePage({ places }: HomePageProps) {
                 key={place.local_entry_id}
                 href={`/${place.local_entry_id}`}
                 className={styles.link}
+                aria-label={`Details zu ${getPlaceName(place)} anzeigen`}
               >
                 <PlaceCard place={place} />
               </a>
