@@ -17,7 +17,11 @@
 
 .header {
   text-align: center;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+.searchContainer {
+  margin-bottom: var(--space-6);
 }
 
 .title {

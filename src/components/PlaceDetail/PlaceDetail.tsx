@@ -48,7 +48,7 @@ export function PlaceDetail({ place, showBackButton = true }: PlaceDetailProps) 
         </header>
 
         <section className={styles.infoSection} aria-labelledby="contact-heading">
-          <h2 id="contact-heading" className={styles.visuallyHidden}>
+          <h2 id="contact-heading" className="visually-hidden">
             Kontakt
           </h2>
           <div className={styles.infoGrid}>
