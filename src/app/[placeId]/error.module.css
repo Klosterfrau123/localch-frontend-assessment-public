@@ -1,0 +1,86 @@
+.main {
+  min-height: 100vh;
+  padding: var(--space-6);
+  background: var(--color-background-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-5);
+  background: var(--color-background-tertiary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+}
+
+.message {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-6);
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buttonPrimary {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.buttonPrimary:hover {
+  background: var(--color-primary-dark);
+}
+
+.buttonSecondary {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.buttonSecondary:hover {
+  background: var(--color-background-secondary);
+  color: var(--color-text);
+}

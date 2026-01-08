@@ -92,3 +92,7 @@
   font-weight: 500;
   margin-left: auto;
 }
+
+.closed {
+  color: var(--color-error);
+}

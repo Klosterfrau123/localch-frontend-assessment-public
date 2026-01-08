@@ -1,11 +1,10 @@
 import { fetchPlace } from '@/lib/api';
+import { config } from '@/lib/config';
 import { PlaceCard } from '@/components/PlaceCard/PlaceCard';
 import styles from './page.module.css';
 
-const EXAMPLE_PLACE_IDS = ['GXvPAor1ifNfpF0U5PTG0w', 'ohGSnJtMIC5nPfYRi_HTAg'];
-
 export default async function HomePage() {
-  const places = await Promise.all(EXAMPLE_PLACE_IDS.map((id) => fetchPlace(id)));
+  const places = await Promise.all(config.examplePlaceIds.map((id) => fetchPlace(id)));
 
   return (
     <main className={styles.main}>

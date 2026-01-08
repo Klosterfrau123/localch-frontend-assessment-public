@@ -17,7 +17,7 @@ const config = [
   },
   // Disable unused class warning for shared CSS modules
   {
-    files: ['**/StarRating/*.tsx'],
+    files: ['**/app/**/page.tsx', '**/app/**/loading.tsx', '**/StarRating/*.tsx'],
     rules: {
       'css-modules/no-unused-class': 'off',
     },

@@ -40,6 +40,13 @@
   margin: 0;
   text-align: right;
   font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeSlot {
+  display: block;
 }
 
 .hoursClosed {

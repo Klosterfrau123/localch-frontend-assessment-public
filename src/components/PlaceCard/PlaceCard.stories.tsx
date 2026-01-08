@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import type { Place } from '@/lib/api';
+import type { Place } from '@/lib/types';
 import { PlaceCard } from './PlaceCard';
 
 const mockPlace: Place = {
@@ -94,41 +94,6 @@ type Story = StoryObj<typeof PlaceCard>;
 export const Default: Story = {
   args: {
     place: mockPlace,
-  },
-};
-
-const baseFeedbackSummary = mockPlace.place_feedback_summary ?? {
-  recommendations: 0,
-  positive_recommendations: 0,
-  ratings_count: 0,
-  average_rating: 0,
-  positive_recommendation_percentage: 0,
-  rating_summaries: [],
-};
-
-export const HighRating: Story = {
-  args: {
-    place: {
-      ...mockPlace,
-      place_feedback_summary: {
-        ...baseFeedbackSummary,
-        average_rating: 5.0,
-        positive_recommendation_percentage: 100,
-      },
-    },
-  },
-};
-
-export const LowRating: Story = {
-  args: {
-    place: {
-      ...mockPlace,
-      place_feedback_summary: {
-        ...baseFeedbackSummary,
-        average_rating: 2.5,
-        positive_recommendation_percentage: 45,
-      },
-    },
   },
 };
 

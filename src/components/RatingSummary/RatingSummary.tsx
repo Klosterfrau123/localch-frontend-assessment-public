@@ -1,16 +1,11 @@
-import type { FeedbackSummary } from '@/lib/api';
+import type { FeedbackSummary } from '@/lib/types';
+import { config } from '@/lib/config';
 import { StarRating } from '@/components/StarRating/StarRating';
 import styles from './RatingSummary.module.css';
 
 interface RatingSummaryProps {
   feedback: FeedbackSummary;
 }
-
-const DIMENSION_LABELS: Record<string, string> = {
-  ambiente: 'Ambiente',
-  service: 'Service',
-  food: 'Essen',
-};
 
 export function RatingSummary({ feedback }: RatingSummaryProps) {
   const { average_rating, ratings_count, positive_recommendation_percentage, rating_summaries } =
@@ -42,7 +37,7 @@ export function RatingSummary({ feedback }: RatingSummaryProps) {
               <div key={dim.dimension} className={styles.dimension}>
                 <div className={styles.dimensionHeader}>
                   <span className={styles.dimensionLabel}>
-                    {DIMENSION_LABELS[dim.dimension] ?? dim.dimension}
+                    {config.dimensions[dim.dimension] ?? dim.dimension}
                   </span>
                   <span className={styles.dimensionValue}>{dim.average.toFixed(1)}</span>
                 </div>

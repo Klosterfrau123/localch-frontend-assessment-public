@@ -1,4 +1,6 @@
-import { fetchPlace } from '@/lib/api';
+'use client';
+
+import type { Place } from '@/lib/types';
 import {
   formatAddress,
   getPhone,
@@ -12,26 +14,14 @@ import { Icon } from '@/components/Icon/Icon';
 import { OpeningHours } from '@/components/OpeningHours/OpeningHours';
 import { RatingSummary } from '@/components/RatingSummary/RatingSummary';
 import { ReviewForm } from '@/components/ReviewForm/ReviewForm';
-import styles from './page.module.css';
+import styles from './PlaceDetail.module.css';
 
-interface PlacePageProps {
-  params: Promise<{ placeId: string }>;
+interface PlaceDetailProps {
+  place: Place;
+  showBackButton?: boolean;
 }
 
-export async function generateMetadata({ params }: PlacePageProps) {
-  const { placeId } = await params;
-  try {
-    const place = await fetchPlace(placeId);
-    return { title: `${getPlaceName(place)} | Home Assignment` };
-  } catch {
-    return { title: 'Place Not Found | Home Assignment' };
-  }
-}
-
-export default async function PlacePage({ params }: PlacePageProps) {
-  const { placeId } = await params;
-  const place = await fetchPlace(placeId);
-
+export function PlaceDetail({ place, showBackButton = true }: PlaceDetailProps) {
   const name = getPlaceName(place);
   const category = getPlaceCategory(place);
   const emoji = getPlaceCategoryEmoji(place);
@@ -43,7 +33,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
     <main className={styles.main}>
       <article className={styles.container}>
         <header className={styles.header}>
-          <BackButton />
+          {showBackButton && <BackButton />}
           <div className={styles.headerMain}>
             {emoji && (
               <span className={styles.emoji} aria-hidden="true">

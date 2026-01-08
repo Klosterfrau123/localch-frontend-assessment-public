@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import type { OpeningHours as OpeningHoursType } from '@/lib/api';
+import type { OpeningHours as OpeningHoursType } from '@/lib/types';
 import { OpeningHours } from './OpeningHours';
 
 const weekdayHours: OpeningHoursType = {
