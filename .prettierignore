@@ -3,4 +3,4 @@ node_modules
 dist
 build
 *.lock
-*.module.css.d.ts
+*.css.d.ts

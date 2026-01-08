@@ -78,7 +78,7 @@ const mockPlace: Place = {
 };
 
 const meta: Meta<typeof PlaceDetail> = {
-  title: 'Pages/PlaceDetail',
+  title: 'Pages/B PlaceDetail',
   component: PlaceDetail,
   parameters: {
     layout: 'fullscreen',
@@ -92,58 +92,6 @@ type Story = StoryObj<typeof PlaceDetail>;
 export const Default: Story = {
   args: {
     place: mockPlace,
-    showBackButton: false,
-  },
-};
-
-export const WithBackButton: Story = {
-  args: {
-    place: mockPlace,
-    showBackButton: true,
-  },
-};
-
-export const WithoutOpeningHours: Story = {
-  args: {
-    place: {
-      ...mockPlace,
-      opening_hours: undefined,
-    },
-    showBackButton: false,
-  },
-};
-
-export const WithoutRatings: Story = {
-  args: {
-    place: {
-      ...mockPlace,
-      place_feedback_summary: undefined,
-    },
-    showBackButton: false,
-  },
-};
-
-export const Minimal: Story = {
-  args: {
-    place: {
-      local_entry_id: 'minimal',
-      language: 'de',
-      addresses: [
-        {
-          business: {
-            identities: [{ name: 'Kleines Café' }],
-            categories: [],
-          },
-          where: {
-            street: 'Hauptstrasse',
-            house_number: '1',
-            zipcode: 8000,
-            city: 'Zürich',
-          },
-          contacts: [],
-        },
-      ],
-    },
     showBackButton: false,
   },
 };
