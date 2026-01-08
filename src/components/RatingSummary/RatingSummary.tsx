@@ -49,6 +49,7 @@ export function RatingSummary({ feedback }: RatingSummaryProps) {
                     aria-valuenow={dim.average}
                     aria-valuemin={0}
                     aria-valuemax={5}
+                    aria-label={`${config.dimensions[dim.dimension] ?? dim.dimension}: ${dim.average.toFixed(1)} von 5`}
                   />
                 </div>
               </div>
