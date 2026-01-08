@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
 import type { Place } from '@/lib/types';
 import { PlaceCard } from '@/components/PlaceCard/PlaceCard';
 import { SearchInput } from '@/components/SearchInput/SearchInput';
 import { getPlaceName } from '@/lib/placeUtils';
+import { useSearch } from '@/hooks/useSearch';
 import styles from './HomePage.module.css';
 
 interface HomePageProps {
@@ -12,16 +12,10 @@ interface HomePageProps {
 }
 
 export function HomePage({ places }: HomePageProps) {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredPlaces = useMemo(() => {
-    if (!searchTerm.trim()) return places;
-    const term = searchTerm.toLowerCase();
-    return places.filter((place) => getPlaceName(place).toLowerCase().includes(term));
-  }, [places, searchTerm]);
-
-  const showEmptyState = filteredPlaces.length === 0;
-  const isSearching = searchTerm.trim().length > 0;
+  const { searchTerm, setSearchTerm, filteredItems, isSearching, hasResults } = useSearch(
+    places,
+    getPlaceName
+  );
 
   return (
     <main className={styles.main}>
@@ -39,7 +33,7 @@ export function HomePage({ places }: HomePageProps) {
           />
         </div>
 
-        {showEmptyState ? (
+        {!hasResults ? (
           <div className={styles.empty}>
             <p className={styles.emptyText}>
               {isSearching ? `Keine Ergebnisse für "${searchTerm}"` : 'Keine Geschäfte gefunden'}
@@ -47,7 +41,7 @@ export function HomePage({ places }: HomePageProps) {
           </div>
         ) : (
           <div className={styles.grid}>
-            {filteredPlaces.map((place) => (
+            {filteredItems.map((place) => (
               <a
                 key={place.local_entry_id}
                 href={`/${place.local_entry_id}`}
