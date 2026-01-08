@@ -1,0 +1,58 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.container.sm svg {
+  width: 14px;
+  height: 14px;
+}
+
+.container.sm .value {
+  font-size: 0.875rem;
+}
+
+.container.md svg {
+  width: 20px;
+  height: 20px;
+}
+
+.container.md .value {
+  font-size: 1rem;
+}
+
+.container.lg svg {
+  width: 28px;
+  height: 28px;
+}
+
+.container.lg .value {
+  font-size: 1.25rem;
+}
+
+.star {
+  display: inline-flex;
+  line-height: 1;
+}
+
+.starInteractive {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.starInteractive:hover {
+  transform: scale(1.1);
+}
+
+.starInteractive:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.value {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-left: var(--space-1);
+}

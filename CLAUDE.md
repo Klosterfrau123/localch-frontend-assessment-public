@@ -55,5 +55,6 @@ Stories directory must be configured in `.storybook/main.ts` by adding paths to 
 Place data API: `https://web.staticlocal.ch/coding-session-rest-api/{place_id}`
 
 Example place IDs:
+
 - `GXvPAor1ifNfpF0U5PTG0w`
 - `ohGSnJtMIC5nPfYRi_HTAg`

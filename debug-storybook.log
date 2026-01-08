@@ -1,0 +1,19 @@
+[10:47:38.418] [INFO] storybook v10.1.11
+[10:47:38.631] [DEBUG] Getting package.json info for /home/marvin/Projects/localch-frontend-engineer-homeassignment-template-main/package.json...
+[10:47:38.857] [INFO] Starting...
+[10:47:38.970] [DEBUG] Starting preview..
+[10:47:39.199] [DEBUG] Using tsconfig paths for react-docgen
+[10:47:39.199] [ERROR] Failed to build the preview
+[10:47:39.201] [ERROR] [38;2;241;97;97mReferenceError: __dirname is not defined[39m
+    at Object.viteFinal (file://./.storybook/main.ts:10:20)
+    at file://./node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:10134:36
+    at async createViteServer (file://./node_modules/@storybook/react-vite/node_modules/@storybook/builder-vite/dist/index.js:6410:21)
+    at async Module.start (file://./node_modules/@storybook/react-vite/node_modules/@storybook/builder-vite/dist/index.js:6435:17)
+    at async storybookDevServer (file://./node_modules/storybook/dist/core-server/index.js:6806:82)
+    at async buildOrThrow (file://./node_modules/storybook/dist/core-server/index.js:5555:12)
+    at async buildDevStandalone (file://./node_modules/storybook/dist/core-server/index.js:7208:66)
+    at async withTelemetry (file://./node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)
+    at async dev (file://./node_modules/storybook/dist/bin/core.js:2734:3)
+    at async _Command.<anonymous> (file://./node_modules/storybook/dist/bin/core.js:2801:92)
+[10:47:39.202] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.

@@ -1,21 +1,16 @@
 import type { StorybookConfig } from '@storybook/nextjs-vite';
 
-import { dirname } from "path"
-
-import { fileURLToPath } from "url"
-
-/**
-* This function is used to resolve the absolute path of a package.
-* It is needed in projects that use Yarn PnP or are set up within a monorepo.
-*/
-function getAbsolutePath(value: string): any {
-  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)))
-}
 const config: StorybookConfig = {
-  "stories": [
-      // TODO: Insert directory with stories
-  ],
-  "addons": [],
-  "framework": getAbsolutePath('@storybook/nextjs-vite'),
+  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  addons: [],
+  framework: {
+    name: '@storybook/nextjs-vite',
+    options: {
+      builder: {
+        viteConfigPath: undefined,
+      },
+    },
+  },
 };
+
 export default config;

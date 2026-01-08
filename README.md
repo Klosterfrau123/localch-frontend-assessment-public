@@ -3,17 +3,19 @@
 ## Setup
 
 - This template lays out a basic structure for a NextJS app with Storybook (in the same repository)
-    - Using NextJS v16 / React v19
-    - Using yarn v1
-    - Using node v22+
+  - Using NextJS v16 / React v19
+  - Using yarn v1
+  - Using node v22+
 - To run the NextJS app:
-   ```bash
+  ```bash
   yarn dev
-   ```
+  ```
 - To run the storybook:
-    ```bash
-    yarn storybook
-    ```
+
+  ```bash
+  yarn storybook
+  ```
+
   - You need to point the storybook to the correct directory in which you want to create the stories [here](.storybook/main.ts)
 
 ## Assignment
@@ -39,9 +41,9 @@ Data for a place can be requested at:
 
 Example place IDs:
 
-* `GXvPAor1ifNfpF0U5PTG0w`
+- `GXvPAor1ifNfpF0U5PTG0w`
 
-* `ohGSnJtMIC5nPfYRi_HTAg`
+- `ohGSnJtMIC5nPfYRi_HTAg`
 
 Use the data as you see fit.
 
@@ -59,15 +61,15 @@ A reusable preview component displaying the most relevant business information.
 
 A full-page view displaying:
 
-* name
+- name
 
-* address
+- address
 
-* opening hours (grouped by identical hours)
+- opening hours (grouped by identical hours)
 
-* rating summary
+- rating summary
 
-* a “Write a review” form (no persistence required)
+- a “Write a review” form (no persistence required)
 
 ---
 
@@ -79,15 +81,15 @@ Provide Storybook entries for the Place Card and at least one additional compone
 
 ### **4\. Requirements**
 
-* Use this provided template project
+- Use this provided template project
 
-* Component structure aligned with modern design-system practices
+- Component structure aligned with modern design-system practices
 
-* Responsive implementation
+- Responsive implementation
 
-* Semantic HTML and accessibility considerations
+- Semantic HTML and accessibility considerations
 
-* Predictable behaviour across different data and network states
+- Predictable behaviour across different data and network states
 
 Use your own judgment for the component architecture, abstractions, naming, and design conventions.
 
@@ -97,7 +99,7 @@ Use your own judgment for the component architecture, abstractions, naming, and 
 
 Please provide:
 
-* link to your repository
+- link to your repository
 
 ---
 
@@ -105,4 +107,3 @@ Please provide:
 
 In the follow-up session, we will extend or modify your solution together and discuss your architectural and UX
 decisions.
-
